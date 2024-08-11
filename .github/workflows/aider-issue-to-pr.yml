@@ -143,7 +143,7 @@ jobs:
         with:
           openai_api_key: ${{ secrets.openai_api_key }}
           branch: ${{ fromJson(steps.create_branch.outputs.result).ref }}
-          aider_args: '--model ${{ inputs.model }} --yes --message "${{ steps.create_prompt.outputs.result }}"'
+          aider_args: '--yes --message "${{ steps.create_prompt.outputs.result }}"'
 
       - name: Create Pull Request
         uses: actions/github-script@v7
